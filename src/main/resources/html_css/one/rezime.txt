@@ -1,0 +1,9 @@
+
+  HTML HyperText Markup Language
+  Web Sajtova i Web Applikacija
+
+
+     jar - Java Archive
+     war -  Web Archive
+
+     jar -> Spring Boot
