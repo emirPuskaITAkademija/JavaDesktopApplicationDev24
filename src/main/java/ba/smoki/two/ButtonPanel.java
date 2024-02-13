@@ -1,5 +1,7 @@
 package ba.smoki.two;
 
+import ba.smoki.three.image.IconLoader;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -17,11 +19,14 @@ public class ButtonPanel extends JPanel {
     private final JButton middleButton;
     private final JButton rightButton;
 
+    private final IconLoader iconLoader = new IconLoader(ButtonPanel.class);
+
     public ButtonPanel() {
 
         ActionListener universalButtonListener = this::onButtonClick;
 
-        Icon rightIcon = createIcon("images/right.gif");
+        Icon rightIcon = iconLoader.loadIcon("images/right.gif");
+//                createIcon("images/right.gif");
         leftButton = new JButton("Disable middle button", rightIcon);
         leftButton.setVerticalTextPosition(SwingConstants.CENTER);
         leftButton.setHorizontalTextPosition(SwingConstants.LEADING);
@@ -76,13 +81,16 @@ public class ButtonPanel extends JPanel {
     }
 
     private Icon createIcon(String pictureName) {
-        ClassLoader classLoader = ButtonPanel.class.getClassLoader();
-        URL imageAddress = classLoader.getResource(pictureName);
-        if (imageAddress != null) {
-            ImageIcon imageIcon = new ImageIcon(imageAddress);
-            return imageIcon;
-        }
-        System.err.println("No image with name " + pictureName);
-        return null;
+        IconLoader iconLoader = new IconLoader(ButtonPanel.class);
+        Icon icon = iconLoader.loadIcon(pictureName);
+        return icon;
+//        ClassLoader classLoader = ButtonPanel.class.getClassLoader();
+//        URL imageAddress = classLoader.getResource(pictureName);
+//        if (imageAddress != null) {
+//            ImageIcon imageIcon = new ImageIcon(imageAddress);
+//            return imageIcon;
+//        }
+//        System.err.println("No image with name " + pictureName);
+//        return null;
     }
 }
