@@ -54,6 +54,10 @@ public class DateTimePanel extends JPanel {
         setBorder(BorderFactory.createEmptyBorder(20, 20 , 20, 20));
     }
 
+    /**
+     *
+     * @param pattern
+     */
     private void formatDate(String pattern){
         Date date = new Date();
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat(pattern);

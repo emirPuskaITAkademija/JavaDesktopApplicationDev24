@@ -4,7 +4,6 @@ import ba.smoki.three.image.IconLoader;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.function.Consumer;
 
 public class GeekPanel extends JPanel {
 
