@@ -6,7 +6,7 @@ import java.awt.*;
 public class GeekRunnable implements Runnable{
     @Override
     public void run() {
-        JFrame prozor = new JFrame("Štreber");
+        JFrame prozor = new JFrame("Zdravo korisniče");
         prozor.setMinimumSize(new Dimension(200, 200));
 
         JPanel geekPanel = new GeekPanel();

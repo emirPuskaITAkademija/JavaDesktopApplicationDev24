@@ -7,6 +7,7 @@ import java.awt.*;
 
 public class GeekPanel extends JPanel {
 
+    private final JLabel greetingLabel = new JLabel("Zdravo korisniče");
     private final CheckBoxPanel checkBoxPanel;
     private final JLabel imageLabel;
     private StringBuffer imageName = new StringBuffer("cght");
@@ -18,6 +19,7 @@ public class GeekPanel extends JPanel {
         checkBoxPanel = new CheckBoxPanel(this::updateImageLabel);
         imageLabel = new JLabel();
         updateImageLabel(new ChangeModel());
+        add(greetingLabel, BorderLayout.PAGE_START);
         add(checkBoxPanel, BorderLayout.LINE_START);
         add(imageLabel, BorderLayout.CENTER);
         setBorder(BorderFactory.createEmptyBorder(50, 50, 50, 50));
