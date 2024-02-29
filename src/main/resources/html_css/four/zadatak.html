@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Raspored časova</title>
+  <style>
+    table{
+     //border-collapse: collapse;
+     border-spacing: 0px;
+    }
+    td, th{
+      border: 1px none gray;
+      padding: 10px;
+      border-radius: 0px;
+    }
+    #rasporedCasova{
+      background-color: lightgray;
+    }
+    #naslovi{
+      background-color: lightblue;
+    }
+    tr{
+      border-bottom: 1px solid gray;
+    }
+    .vazna{
+      background-color: powderblue;
+      color: tomato;
+    }
+  </style>
+</head>
+<body>
+  <table>
+    <caption>Raspored</caption>
+    <tr id="rasporedCasova">
+      <th colspan="6">
+        RASPORED ČASOVA
+      </th>
+    </tr>
+    <tr id="naslovi">
+      <th></th>
+      <th>PONEDELJAK</th>
+      <th>UTORAK</th>
+      <th>SRIJEDA</td>
+      <th>ČETVRTAK</th>
+      <th>PETAK</th>
+    </tr>
+    <tr>
+      <td>1.</td>
+      <td>Muzičko</td>
+      <td class="vazna">Hemija</td>
+      <td>Likovno</td>
+      <td>Bosanski</td>
+      <td class="vazna">Matematika</td>
+    </tr>
+    <tr>
+      <td>2.</td>
+      <td class="vazna">Matematika</td>
+      <td>Bosanski</td>
+      <td>Bosanski</td>
+      <td>Fizičko</td>
+      <td>Bosanski</td>
+    </tr>
+    <tr>
+      <td>3.</td>
+      <td class="vazna">Engleski</td>
+      <td rowspan="2">Matematika</td>
+      <td>Fizika</td>
+      <td>Hemija</td>
+      <td>Fizika</td>
+    </tr>
+    <tr>
+      <td>4.</td>
+      <td class="vazna">Fizika</td>
+      <td class="vazna">Engleski</td>
+      <td>Biologija</td>
+      <td class="vazna">Informatika</td>
+    </tr>
+    <tr>
+      <td>5.</td>
+      <td>Fizičko</td>
+      <td>Biologija</td>
+      <td>Historija</td>
+      <td class="vazna">Francuski</td>
+      <td>Fizičko</td>
+    </tr>
+  </table>
+</body>
+</html>
