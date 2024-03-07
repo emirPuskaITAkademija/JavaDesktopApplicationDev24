@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Demonstration of table usage</title>
+  <style>
+    table{
+      margin-top: 20px;
+      font-family: arial,sans-serif;
+      border-collapse: collapse;
+      width:100%;
+    }
+    td, th{
+      border: 1px solid #dddddd;
+      padding: 8px;
+    }
+    tr:nth-child(even){
+      background-color: lightgray;
+    }
+    .superNaslov{
+       text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <h2>Demostration of HTML table usage</h2>
+  <form method="GET">
+    <label for="firstName">Ime:</label>
+    <br>
+    <input type="text" id="firstName" name="name" required/>
+    <br>
+    <label for="lastName">Prezime:</label>
+    <br>
+    <input type="text" id="lastName" name="surname" required/>
+    <br>
+    <br>
+    <p>Odaberi omiljeno</p>
+    <input name="omiljeno" id="javaLang" type="radio" value="Java"/>
+    <label for="javaLang">Java</label>
+    <br>
+    <input name="omiljeno" id="jsLang" type="radio" value="JavaScript"/>
+    <label for="jsLang">JavaScript</label>
+    <br>
+    <input name="omiljeno" id="htmlLang" type="radio" value="HTML"/>
+    <label for="htmlLang">HTML</label>
+    <br>
+    <input name="omiljeno" id="cssLang" type="radio" value="CSS"/>
+    <label for="cssLang">CSS</label>
+    <br>
+    <br>
+    <label for="inputDate">Datum rođenja</label>
+    <input id="inputDate" type="date" name="birthday">
+    <br>
+    <br>
+    <label for="licenceAgreement">Da li se slažete ? </label>
+    <input id="licenceAgreement" type="checkbox" name="agreement">
+    <br>
+    <br>
+    <br>
+    <label for="omiljenaBoja">Omiljena boja</label>
+    <input id="omiljenaBoja" type="color" name="omiljenaBoja">
+    <br>
+    <br>
+    <br>
+    <label for="cv">CV</label>
+    <input id="cv" type="file" name="cv">
+    <br>
+    <br>
+    <input type="submit" value="POŠALJI PODATKE"/>
+    <br>
+  </form>
+  <table>
+    <tr class="superNaslov">
+      <th colspan="2">Full name</th>
+      <th colspan="3">Adresa</th>
+    </tr>
+    <tr>
+      <th>Ime</th>
+      <th>Prezime</th>
+      <th>Grad</th>
+      <th>Država</th>
+      <th>Kontinent</th>
+    </tr>
+    <tr>
+      <td>Muhamed</td>
+      <td>Salihović</td>
+      <td>Sarajevo</td>
+      <td>Bosna i Hercegovina</td>
+      <td>Evropa</td>
+    </tr>
+    <tr>
+      <td>Mile</td>
+      <td>Vukajlović</td>
+      <td>Sarajevo</td>
+      <td>BiH</td>
+      <td>Evropa</td>
+    </tr>
+    <tr>
+      <td>Kanita</td>
+      <td>Berbić</td>
+      <td>Jakarta</td>
+      <td>Indonezija</td>
+      <td>Azija</td>
+    </tr>
+    <tr>
+      <td>Alen</td>
+      <td>Botić</td>
+      <td>Mexico</td>
+      <td>Mexico</td>
+      <td>Južna Amerika</td>
+    </tr>
+  </table>
+</body>
+</html>

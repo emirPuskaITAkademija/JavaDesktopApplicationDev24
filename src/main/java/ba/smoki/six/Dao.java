@@ -9,4 +9,8 @@ public interface Dao<E>{
     List<String> findColumnNames();
 
     void update(E entity);
+
+    void delete(E entity);
+
+    void save(E entity);
 }

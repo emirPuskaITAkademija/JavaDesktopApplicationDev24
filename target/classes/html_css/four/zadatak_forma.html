@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Register</h1>
+<form method="get">
+    <label for="firstName">First Name:</label>
+    <input required type="text" id="firstName" name="firstName" placeholder="Muha">
+    <br>
+    <label for="lastName">Last Name:</label>
+    <input required type="text" id="lastName" name="lastName" placeholder="Salivić">
+    <br>
+    <label for="genderMale">Male</label>
+    <input type="radio" id="genderMale" name="gender" value="muško">
+    <label for="genderFemale">Female</label>
+    <input checked type="radio" id="genderFemale" name="gender" value="žensko">
+    <label for="genderOther">Other</label>
+    <input type="radio" id="genderOther" name="gender" value="unknown">
+    <br>
+    <label for="emailInput">Email:</label>
+    <input required type="email" placeholder="Your Email" id="emailInput" name="emailInput">
+    <br>
+    <label for="passInput">Password</label>
+    <input minlength="5" maxlength="10" type="password" placeholder="Your Password" id="passInput" name="passwordInput">
+    <br>
+    <label for="birthdayInput">Birthday:</label>
+    <select name="month" id="birthdayInput">
+        <option value="Januar">Januar</option>
+        <option value="Februar">Februar</option>
+        <option value="Mart">Mart</option>
+        <option value="April">April</option>
+        <option value="Maj">Maj</option>
+        <option value="Juni"></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+    </select>
+    <select name="day">
+        <option value="1">1</option>
+        <option value="2">30</option>
+        <option value="28">28</option>
+        <option value="29">31</option>
+    </select>
+    <select name="year">
+        <option value="2024">2024</option>
+        <option value="2023">2023</option>
+        <option value="2022">2022</option>
+        <option value="2021">2021</option>
+    </select>
+    <br>
+    <label for="checkBoxAgreement">I agree to the terms and conditions</label>
+    <input type="checkbox" id="checkBoxAgreement" name="agreement">
+    <br>
+    <input type="submit">
+</form>
+</body>
+</html>

@@ -86,4 +86,16 @@ public class PlayerDao implements Dao<Player>{
             System.err.println(exception.getMessage());
         }
     }
+
+    @Override
+    public void delete(Player player) {
+        String sqlUpdate = """
+                  DELETE FROM players WHERE id=1;
+                """;
+    }
+
+    @Override
+    public void save(Player player) {
+
+    }
 }
