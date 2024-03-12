@@ -2,6 +2,10 @@ package ba.smoki.six;
 
 import ba.smoki.five.table.ColorCellEditor;
 import ba.smoki.five.table.ColorCellRenderer;
+import ba.smoki.seven.player.Player;
+import ba.smoki.seven.player.PlayerDao;
+import ba.smoki.seven.sport.Sport;
+import ba.smoki.seven.sport.SportDao;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -15,7 +19,7 @@ import java.awt.event.KeyEvent;
 import java.util.List;
 
 public class PlayerPanel extends JPanel {
-    public static final int SPORT_COLUMN_INDEX = 4;
+    public static final int SPORT_COLUMN_INDEX = 6;
     private final JTable playerTable;
     private final TableRowSorter<PlayerTableModel> tableRowSorter;
     private final JTextField filterTextField;
@@ -65,12 +69,9 @@ public class PlayerPanel extends JPanel {
 
     private void setupSportColumnModel() {
         TableColumn sportColumn = playerTable.getColumnModel().getColumn(SPORT_COLUMN_INDEX);
-        JComboBox<String> sportComboBox = new JComboBox<>();
-        sportComboBox.addItem("Košarka");
-        sportComboBox.addItem("Balet");
-        sportComboBox.addItem("Fudbal");
-        sportComboBox.addItem("Tenis");
-        sportComboBox.addItem("Odbojka");
+        JComboBox<Sport> sportComboBox = new JComboBox<>();
+        SportDao sportDao = new SportDao();
+        sportDao.findAll().forEach(sportComboBox::addItem);
         sportColumn.setCellEditor(new DefaultCellEditor(sportComboBox));
     }
 
@@ -152,9 +153,9 @@ public class PlayerPanel extends JPanel {
                 case 1 -> player.getName();
                 case 2 -> player.getSurname();
                 case 3 -> player.getColor();
-                case 4 -> player.getSport();
-                case 5 -> player.getYears();
-                case 6 -> player.getVegetarian();
+                case 4 -> player.getYears();
+                case 5 -> player.getVegetarian();
+                case 6 -> player.getSport();
                 default -> "";
             };
         }
@@ -179,9 +180,9 @@ public class PlayerPanel extends JPanel {
                 case 1 -> player.setName((String) aValue);
                 case 2 -> player.setSurname((String) aValue);
                 case 3 -> player.setColor((Color) aValue);
-                case 4 -> player.setSport((String) aValue);
-                case 5 -> player.setYears((Integer) aValue);
-                case 6 -> player.setVegetarian((Boolean) aValue);
+                case 4 -> player.setYears((Integer) aValue);
+                case 5 -> player.setVegetarian((Boolean) aValue);
+                case 6 -> player.setSport((Sport) aValue);
             }
             playerDao.update(player);
             fireTableCellUpdated(rowIndex, columnIndex);

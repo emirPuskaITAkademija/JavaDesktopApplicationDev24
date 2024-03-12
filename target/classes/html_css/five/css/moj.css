@@ -1,0 +1,50 @@
+*{
+    font-family: sans-serif;
+}
+
+#specijalni{
+    color: white;
+}
+
+.centrirani{
+    text-align: center;
+}
+
+p.centrirani{
+    color: green;
+}
+
+/* Želim ovim stilom da gađam samo jedan paragraf koji dolazi neposredno poslije h1 elementa */
+h1+p{
+    color: violet;
+}
+
+#mile{
+    display: inline;
+}
+
+#muha{
+  display: inline;
+}
+
+#imamovic{
+   display: inline;
+}
+
+body{
+    background-color: lightblue;
+}
+h1{
+    color: white;
+    text-align: center;
+}
+p{
+    font-family: verdana;
+    font-size: 16px;
+}
+
+div>a{
+    font-family:  Goudy Bookletter 1911;
+    font-size: 24px;
+    color: tomato;
+}

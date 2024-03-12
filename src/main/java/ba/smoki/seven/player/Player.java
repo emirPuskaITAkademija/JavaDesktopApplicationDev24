@@ -1,20 +1,24 @@
-package ba.smoki.six;
+package ba.smoki.seven.player;
+
+import ba.smoki.seven.sport.Sport;
 
 import java.awt.*;
+import java.util.Objects;
+
 //Klasa čija struktura odgovara strukturi tabele players u bazi.
 public class Player {
     private Long id;
     private String name;
     private String surname;
     private Color color;
-    private String sport;
+    private Sport sport;
     private Integer years;
     private Boolean vegetarian;
 
     public Player() {
     }
 
-    public Player(Long id, String name, String surname, Color color, String sport, Integer years, Boolean vegetarian) {
+    public Player(Long id, String name, String surname, Color color, Sport sport, Integer years, Boolean vegetarian) {
         this.id = id;
         this.name = name;
         this.surname = surname;
@@ -56,11 +60,11 @@ public class Player {
         this.color = color;
     }
 
-    public String getSport() {
+    public Sport getSport() {
         return sport;
     }
 
-    public void setSport(String sport) {
+    public void setSport(Sport sport) {
         this.sport = sport;
     }
 
@@ -78,5 +82,23 @@ public class Player {
 
     public void setVegetarian(Boolean vegetarian) {
         this.vegetarian = vegetarian;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Player player = (Player) o;
+        return Objects.equals(id, player.id);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id);
+    }
+
+    @Override
+    public String toString() {
+        return name + " " + surname + ", " + sport;
     }
 }

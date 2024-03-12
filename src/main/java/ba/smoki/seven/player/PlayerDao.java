@@ -1,4 +1,9 @@
-package ba.smoki.six;
+package ba.smoki.seven.player;
+
+import ba.smoki.seven.sport.Sport;
+import ba.smoki.seven.sport.SportDao;
+import ba.smoki.six.ColorConvertor;
+import ba.smoki.six.Dao;
 
 import java.awt.*;
 import java.sql.*;
@@ -11,10 +16,8 @@ import java.util.List;
  * <li>Statement, PreparedStatement</li>
  * <li>ResultSet, ResultSetMetaData</li>
  */
-public class PlayerDao implements Dao<Player>{
-    public static final String URL = "jdbc:mysql://localhost:3306/players";
-    public static final String USER = "root";
-    public static final String PASSWORD = "root";
+public class PlayerDao implements Dao<Player> {
+
 
     @Override
     public List<Player> findAll() {
@@ -30,9 +33,12 @@ public class PlayerDao implements Dao<Player>{
                 String colorString = resultSet.getString("color");
                 ColorConvertor colorConvertor = new ColorConvertor();
                 Color color = colorConvertor.toColor(colorString);
-                String sport = resultSet.getString("sport");
+                Long sportId = resultSet.getLong("sport_id");
+                SportDao sportDao = new SportDao();
+                Sport sport = sportDao.findById(sportId);
                 Integer years = resultSet.getInt("years");
                 Boolean vegetarian = resultSet.getBoolean("vegetarian");
+
                 Player player = new Player(id, name, surname, color, sport, years, vegetarian);
                 players.add(player);
             }
@@ -43,59 +49,74 @@ public class PlayerDao implements Dao<Player>{
     }
 
     @Override
-    public List<String> findColumnNames(){
-        List<String> columnNames = new ArrayList<>();
-        String sqlQuery = "SELECT * FROM players";
-        try(Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)){
-            PreparedStatement preparedStatement = connection.prepareStatement(sqlQuery);
-            ResultSet resultSet = preparedStatement.executeQuery();
-            ResultSetMetaData resultSetMetaData = resultSet.getMetaData();
-            int columnCount = resultSetMetaData.getColumnCount();
-            for(int i = 1; i<=columnCount; i++){
-                String columnName = resultSetMetaData.getColumnName(i);
-                columnNames.add(columnName);
-            }
-        }catch (SQLException exception){
-            System.err.println(exception.getMessage());
-        }
-        return columnNames;
+    public Player findById(Long id) {
+        return null;
     }
 
 
-
     @Override
-    public void update(Player player){
+    public void update(Player player) {
         String sqlUpdate = """
                   UPDATE players 
-                  SET name=?, surname=?, color=?, sport=?, years=?, vegetarian=?
+                  SET name=?, surname=?, color=?, sport_id=?, years=?, vegetarian=?
                   WHERE id=?
                 """;
-        try(Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)){
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
             PreparedStatement preparedStatement = connection.prepareStatement(sqlUpdate);
             preparedStatement.setString(1, player.getName());
             preparedStatement.setString(2, player.getSurname());
             ColorConvertor colorConvertor = new ColorConvertor();
             String color = colorConvertor.toColorString(player.getColor());
             preparedStatement.setString(3, color);
-            preparedStatement.setString(4, player.getSport());
+            preparedStatement.setLong(4, player.getSport().getId());
             preparedStatement.setInt(5, player.getYears());
             preparedStatement.setBoolean(6, player.getVegetarian());
             preparedStatement.setLong(7, player.getId());
             preparedStatement.execute();
-        }catch (SQLException exception){
+        } catch (SQLException exception) {
             System.err.println(exception.getMessage());
         }
     }
 
     @Override
     public void delete(Player player) {
-        String sqlUpdate = """
-                  DELETE FROM players WHERE id=1;
+        String sqlDelete = """
+                  DELETE FROM players WHERE id=?;
                 """;
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlDelete);
+            preparedStatement.setLong(1, player.getId());
+            preparedStatement.execute();
+        } catch (SQLException e) {
+            System.err.println(e.getMessage());
+        }
     }
 
     @Override
     public void save(Player player) {
+        String sqlInsert = """
+                INSERT INTO players 
+                (`name`, `surname`, `color`, `sport_id`, `years`, `vegetarian`) 
+                VALUES (?, ?, ?, ?, ?, ?)  
+                """;
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
+            PreparedStatement preparedStatement = connection.prepareStatement(sqlInsert);
+            preparedStatement.setString(1, player.getName());
+            preparedStatement.setString(2, player.getSurname());
+            ColorConvertor colorConvertor = new ColorConvertor();
+            String color = colorConvertor.toColorString(player.getColor());
+            preparedStatement.setString(3, color);
+            preparedStatement.setLong(4, player.getSport().getId());
+            preparedStatement.setInt(5, player.getYears());
+            preparedStatement.setBoolean(6, player.getVegetarian());
+            preparedStatement.execute();
+        } catch (SQLException exception) {
+            System.err.println(exception.getMessage());
+        }
+    }
 
+    @Override
+    public String tableName() {
+        return "players";
     }
 }

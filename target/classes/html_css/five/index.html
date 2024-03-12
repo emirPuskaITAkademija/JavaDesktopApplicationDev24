@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Player Forma</title>
+</head>
+<body>
+<h1>Players</h1>
+<form action="#" method="POST">
+    <label for="nameInput">Name:</label>
+    <input id="nameInput" name="firstName" type="text" required placeholder="Enter player's name...">
+    <br>
+    <label for="surnameInput">Surname:</label>
+    <input id="surnameInput" name="lastName" type="text" required placeholder="Enter player's surname...">
+    <br>
+    <label for="colorInput">Color:</label>
+    <input id="colorInput" type="color" name="color" value="tomato"/>
+    <br>
+    <label for="sportInput">Sport:</label>
+    <select name="sport" id="sportInput">
+        <option value="Košarka">Košarka</option>
+        <option value="Nogomet">Nogomet</option>
+        <option value="Tenis">Tenis</option>
+        <option value="Odbojka">Odbojka</option>
+        <option value="Golf">Golf</option>
+    </select>
+    <br>
+    <label for="yearInput">Years:</label>
+    <input type="number" id="yearInput" value="1">
+    <br>
+    <br>
+    <label>Vegetarijanac:</label>
+
+    <input type="radio" id="vegetarianYes" name="vegetarian" value="yes">
+    <label for="vegetarianYes">Yes</label>
+
+    <input checked type="radio" id="vegetarianNo" name="vegetarian" value="no">
+    <label for="vegetarianNo">No</label>
+    <br>
+    <label for="googleSearch">Pretraži google:</label>
+    <input type="search" id="googleSearch" name="q">
+    <br>
+    <input type="submit">
+</form>
+</body>
+</html>

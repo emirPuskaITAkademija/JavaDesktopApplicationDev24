@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Stilizovani</title>
+    <link rel="stylesheet" href="moj.css">
+</head>
+<body>
+<h1 class="centrirani">Dan žena 8. Mart/8 Marz/ 8th March</h1>
+<p>
+    Dženisov paragraf
+</p>
+<div class="centrirani">
+    <a href="https://hr.wikipedia.org/wiki/Me%C4%91unarodni_dan_%C5%BEena">DIJETE: LINK DO 8. MARTA</a>
+
+    <p>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam assumenda atque corporis
+        deleniti distinctio ducimus eius, enim fugit id officiis omnis rerum sunt totam vitae voluptate. Ducimus maiores
+        non pariatur?
+        <a href="https://hr.wikipedia.org/wiki/Me%C4%91unarodni_dan_%C5%BEena">UNUČE: LINK DO 8. MARTA</a>
+    </p>
+</div>
+<p class="centrirani">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam debitis, labore nihil non odio
+    perspiciatis placeat
+    quis. Minima optio, sed? Commodi dicta eaque exercitationem iste magni nemo optio quae voluptates!</p>
+
+<p id="specijalni">
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus alias doloremque quia quis veniam! Asperiores
+    atque cum delectus dignissimos maiores optio repellat repudiandae tempora! Asperiores atque cum eius rem velit.
+</p>
+<button onclick="sakrij()">Sakrij specijalnog</button>
+<button onclick="prikazi()">Prikaži specijalnog</button>
+<script>
+    function sakrij(){
+        var specijalniParagraf = document.getElementById("specijalni");
+        specijalniParagraf.style.visibility="hidden";
+    }
+
+    function prikazi(){
+        var specijalniParagraf = document.getElementById("specijalni");
+        specijalniParagraf.style.visibility="visible";
+    }
+</script>
+</body>
+</html>
