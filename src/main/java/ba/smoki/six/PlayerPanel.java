@@ -96,7 +96,7 @@ public class PlayerPanel extends JPanel {
         private void filter() {
             //LIKE %ić%ž
             //Ovdje vežemo ono što je korisnik unio u filterTextField sa rowFilter
-            RowFilter<PlayerTableModel, Object> rowFilter = RowFilter.regexFilter(filterTextField.getText(), 0);
+            RowFilter<PlayerTableModel, Object> rowFilter = RowFilter.regexFilter(filterTextField.getText(), 2);
             //Taj rowFilter koji priča sa filterTextField smo dodijelili tabeli preko tableRowSorter
             tableRowSorter.setRowFilter(rowFilter);
 
