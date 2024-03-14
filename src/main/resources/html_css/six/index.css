@@ -1,0 +1,115 @@
+#contentDiv{
+       display: flex;
+       background-color: #AEC6Cf;
+       align-items: center;
+       height: 100vh;
+}
+
+
+#logoImageDiv{
+    transform: scale(0.4);
+    display: inline-block;
+    width: 50%;
+}
+
+.inputKlasa{
+    font-family: Arial;
+    post-script: Arial-BoldMT;
+    width: 340px;
+    height: 40px;
+    margin: 8px;
+    border-radius: 8px;
+    padding: 8px;
+}
+
+input[type=text] {
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+input[type=email] {
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+textarea{
+  border: 1px solid lightgray;
+  border-radius: 4px;
+}
+
+#lineDiv{
+    border: 1px solid lightgray;
+}
+
+#formDiv{
+    display: inline-block;
+    width: 397px;
+    height: 489px;
+    margin-right: 300px;
+    background-color: white;
+    margin: 20px 300px 20px 0px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+form{
+    margin: 10px;
+}
+
+#inputButtonDiv{
+    margin-left: 200px;
+    margin-right: 200px;
+}
+
+.inputButtonDiv{
+    display: flex;
+    margin: 10px 0px 0px 0px;
+    justify-content: space-between;
+    position: sticky;
+}
+
+#serviceDescription{
+    height: 70px;
+    resize: none;
+}
+
+#sendButton{
+    order: 1;
+    width: 50%;
+    height: 45px;
+    margin: 2px;
+    color: white;
+    background-color: #0866ff;
+    font-family: Arial;
+    font-size: 18px;
+    font-weight: 400;
+    border-radius: 4px;
+    border: none;
+    padding: 14px 16px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+#facebookText{
+    font-family: Arial;
+    font-size: 60px;
+    padding: 0px 0px 20px
+}
+
+#resetButton{
+   order: 2;
+   width: 50%;
+   margin: 2px;
+   height: 45px;
+   color: white;
+   font-family: Arial;
+   font-size: 18px;
+   background-color: #42b72a;
+   border: none;
+   border-radius: 4px;
+   padding: 8px;
+   box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+fieldset{
+    border-radius: 8px;
+}

@@ -6,19 +6,44 @@
     <link href="index.css" rel="stylesheet">
 </head>
 <body>
-    <fieldset>
-        <legend>Kontact Informacije</legend>
-        <label for="nameInput">Name:</label>
-        <br>
-        <input id="nameInput" type="text">
-        <br>
-        <label for="surnameInput">Surname:</label>
-        <br>
-        <input id="surnameInput" type="text">
-        <br>
-        <label for="emailInput">Email:</label>
-        <br>
-        <input type="email" id="emailInput">
-    </fieldset>
+<div id="contentDiv">
+    <!--    <div class="skupljajuci">-->
+    <div id="logoImageDiv">
+        <img src="https://static.xx.fbcdn.net/rsrc.php/y1/r/4lCu2zih0ca.svg">
+        <p id="facebookText">Connect with friends and the world around you on Facebook.</p>
+    </div>
+    <div id="formDiv">
+        <form>
+            <div class="formContainer">
+                <!--                <fieldset>-->
+                <!--                    <legend>Kontact Informacije</legend>-->
+
+                <input id="nameInput" type="text" class="inputKlasa" placeholder="Enter name">
+                <br>
+                <input id="surnameInput" type="text" class="inputKlasa" placeholder="Enter surname">
+                <br>
+                <input type="email" id="emailInput" class="inputKlasa" placeholder="Enter email">
+                <br>
+                <!--                </fieldset>-->
+                <!--                <fieldset>-->
+                <!--                    <legend>Service Description</legend>-->
+<!--                <br>-->
+                <input id="serviceNameInput" type="text" class="inputKlasa" placeholder="Enter service name">
+                <br>
+                <textarea id="serviceDescription" class="inputKlasa" placeholder="Describe service..."></textarea>
+                <br>
+                <!--                <label for="satisfiedCheckBox">Are you satisfied ? </label>-->
+                <!--                <input type="checkbox" id="satisfiedCheckBox" class="inputKlasa">-->
+                <!--                </fieldset>-->
+            </div>
+            <div id="lineDiv"></div>
+            <div class="inputButtonDiv">
+                <input id="sendButton" type="submit" value="Send"/>
+                <input id="resetButton" type="reset" value="Reset"/>
+            </div>
+        </form>
+    </div>
+    <!--    </div>-->
+</div>
 </body>
 </html>
